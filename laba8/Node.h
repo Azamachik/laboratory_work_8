@@ -9,8 +9,8 @@ struct Node {
 	string maritalStatus;
 	bool operator<(const Node& other) const;};
 namespace constants {
-	const string fullName{ "ˆ¢ ­®¢ ˆ¢ ­ ˆ¢ ­®¢¨ç" };
-	const string status{ "¥ ¦¥­ â" };
+	const string fullName{ "Ð˜Ð²Ð°Ð½Ð¾Ð² Ð˜Ð²Ð°Ð½ Ð˜Ð²Ð°Ð½Ð¾Ð²Ð¸Ñ‡" };
+	const string status{ "ÐÐµ Ð¶ÐµÐ½Ð°Ñ‚" };
 	const int age{ 20 };}
 void addElement(forward_list<Node>&, const string&, int, const string&);
 void printList(forward_list<Node>&);
