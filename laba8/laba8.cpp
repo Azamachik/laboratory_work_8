@@ -9,7 +9,7 @@ int main() {
 	forward_list<Node> people;
 	if (!loadListFromFile(people, "list.txt")) {
 		return 1;}
-	else cout << "„ ­­ë¥ § £àã¦¥­ë" << endl;
+	else cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ Ð·Ð°Ð³Ñ€ÑƒÐ¶ÐµÐ½Ñ‹" << endl;
 	string input;
 	regex valid_input("[1-5]"), valid_field("[1-5]");
 	do {
@@ -24,7 +24,7 @@ int main() {
 				selectFieldForDeleting();
 				getline(cin, search_field);
 			} while (!regex_match(search_field, valid_field));
-			cout << "‚¢¥¤¨â¥ á®¤¥à¦¨¬®¥ ¯®«¥: ";
+			cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ð¼Ð¾Ðµ Ð¿Ð¾Ð»Ðµ: ";
 			getline(cin, search_content);
 			int field = atoi(search_field.c_str());
 			removeElement(people, search_content, field);
@@ -36,5 +36,5 @@ int main() {
 		else if (input == "4") setList(people, "list.txt");
 	} while (input != "5");
 	clearList(people);
-	cout << "„® á¢¨¤ ­¨ï!" << endl;
+	cout << "Ð”Ð¾ ÑÐ²Ð¸Ð´Ð°Ð½Ð¸Ñ!" << endl;
 	return 0;}
