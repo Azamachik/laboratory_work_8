@@ -15,7 +15,7 @@ void addElement(forward_list<Node>& list, const string& fullName, int age, const
 void saveListToFile(const forward_list<Node>& list, const string& filename) {
 	ofstream outFile(filename);
 	if (!outFile) {
-		cerr << "éË®°™† Æ‚™‡Î‚®Ô ‰†©´† §´Ô ß†Ø®·®" << endl;
+		cerr << "–û—à–∏–±–∫–∞ –æ—Ç–∫—Ä—ã—Ç–∏—è —Ñ–∞–π–ª–∞ –¥–ª—è –∑–∞–ø–∏—Å–∏" << endl;
 		return;}
 	for (const auto& person : list) {
 		outFile << person.fullName << "; " << person.age <<
@@ -23,10 +23,10 @@ void saveListToFile(const forward_list<Node>& list, const string& filename) {
 bool loadListFromFile(forward_list<Node>& list, const string& filename) {
 	ifstream inFile(filename);
 	if (!inFile) {
-		cerr << "éË®°™† Æ‚™‡Î‚®Ô ‰†©´† §´Ô Á‚•≠®Ô" << endl;
+		cerr << "–û—à–∏–±–∫–∞ –æ—Ç–∫—Ä—ã—Ç–∏—è —Ñ–∞–π–ª–∞ –¥–ª—è —á—Ç–µ–Ω–∏—è" << endl;
 		return false;}
 	string line;
-	regex valid_fio("^[A-Za-zÄ-ü†-Ô]+? [A-Za-zÄ-ü†-Ô]+? [A-Za-zÄ-ü†-Ô]+?$");
+	regex valid_fio("^[A-Za-z–ê-–Ø–∞-—è]+? [A-Za-z–ê-–Ø–∞-—è]+? [A-Za-z–ê-–Ø–∞-—è]+?$");
 	while (getline(inFile, line)) {
 		istringstream ss(line);
 		string fullName, maritalStatus;
@@ -36,19 +36,24 @@ bool loadListFromFile(forward_list<Node>& list, const string& filename) {
 		ss >> age >> delimiter;
 		getline(ss, maritalStatus);
 		if (!regex_match(fullName, valid_fio)) {
-			cerr << "éË®°™† Ø‡® Á‚•≠®® §†≠≠ÎÂ.\n";
-			cerr << "ç•™Æ‡‡•™‚≠Æ• îàé. (Ø‡®¨•‡: ü≠Æ¢ ü≠ ü≠Æ¢®Á)\n";
-			cerr << "èÆ¶†´„©·‚†, ®·Ø‡†¢Ï‚• ·Æ§•‡¶®¨Æ• ‰†©´†.\n";
+			cerr << "–û—à–∏–±–∫–∞ –ø—Ä–∏ —á—Ç–µ–Ω–∏–∏ –¥–∞–Ω–Ω—ã—Ö.\n";
+			cerr << "–ù–µ–∫–æ—Ä—Ä–µ–∫—Ç–Ω–æ–µ –§–ò–û. (–ø—Ä–∏–º–µ—Ä: –Ø–Ω–æ–≤ –Ø–Ω –Ø–Ω–æ–≤–∏—á)\n";
+			cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
 			return false;}
 		if(!(fullName.length() && bool(age) && maritalStatus.length())) {
-			cerr << "éË®°™† Ø‡® Á‚•≠®® §†≠≠ÎÂ.\n";
-			cerr << "è‡ÆØ„È•≠Æ Æ§≠Æ ®ß ØÆ´•©.\n";
-			cerr << "èÆ¶†´„©·‚†, ®·Ø‡†¢Ï‚• ·Æ§•‡¶®¨Æ• ‰†©´†.\n";
+			cerr << "–û—à–∏–±–∫–∞ –ø—Ä–∏ —á—Ç–µ–Ω–∏–∏ –¥–∞–Ω–Ω—ã—Ö.\n";
+			cerr << "–ü—Ä–æ–ø—É—â–µ–Ω–æ –æ–¥–Ω–æ –∏–∑ –ø–æ–ª–µ–π.\n";
+			cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
 			return false;}
 		if (fullName.length() > 35) {
-			cerr << "éË®°™† Ø‡® Á‚•≠®® §†≠≠ÎÂ.\n";
-			cerr << "èÆ´• îàé §Æ´¶≠Æ ·Æ§•‡¶†‚Ï ≠• °Æ´•• 35 ·®¨¢Æ´Æ¢ §´Ô ™Æ‡‡•™‚≠Æ·‚® ‡†°Æ‚Î Ø‡Æ£‡†¨¨Î.\n";
-			cerr << "èÆ¶†´„©·‚†, ®·Ø‡†¢Ï‚• ·Æ§•‡¶®¨Æ• ‰†©´†.\n";
+			cerr << "–û—à–∏–±–∫–∞ –ø—Ä–∏ —á—Ç–µ–Ω–∏–∏ –¥–∞–Ω–Ω—ã—Ö.\n";
+			cerr << "–ü–æ–ª–µ –§–ò–û –¥–æ–ª–∂–Ω–æ —Å–æ–¥–µ—Ä–∂–∞—Ç—å –Ω–µ –±–æ–ª–µ–µ 35 —Å–∏–º–≤–æ–ª–æ–≤ –¥–ª—è –∫–æ—Ä—Ä–µ–∫—Ç–Ω–æ—Å—Ç–∏ —Ä–∞–±–æ—Ç—ã –ø—Ä–æ–≥—Ä–∞–º–º—ã.\n";
+			cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
+			return false;}
+		if (maritalStatus.length() > 15) {
+			cerr << "–û—à–∏–±–∫–∞ –ø—Ä–∏ —á—Ç–µ–Ω–∏–∏ –¥–∞–Ω–Ω—ã—Ö.\n";
+			cerr << "–ü–æ–ª–µ —Å–µ–º–µ–π–Ω–æ–µ –ø–æ–ª–æ–∂–µ–Ω–∏–µ –¥–æ–ª–∂–Ω–æ —Å–æ–¥–µ—Ä–∂–∞—Ç—å –Ω–µ –±–æ–ª–µ–µ 15 —Å–∏–º–≤–æ–ª–æ–≤ –¥–ª—è –∫–æ—Ä—Ä–µ–∫—Ç–Ω–æ—Å—Ç–∏ —Ä–∞–±–æ—Ç—ã –ø—Ä–æ–≥—Ä–∞–º–º—ã.\n";
+			cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
 			return false;}
 		addElement(list, fullName, age, maritalStatus);}
 	inFile.close();
@@ -61,53 +66,53 @@ int getIntInput() {
 	while (!(cin >> input)) {
 		cin.clear();
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "ç•™Æ‡‡•™‚≠Î© ¢¢Æ§. èÆ¶†´„©·‚†, ¢¢•§®‚• Ê•´Æ• Á®·´Æ: ";}
+		cout << "–ù–µ–∫–æ—Ä—Ä–µ–∫—Ç–Ω—ã–π –≤–≤–æ–¥. –ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –≤–≤–µ–¥–∏—Ç–µ —Ü–µ–ª–æ–µ —á–∏—Å–ª–æ: ";}
 	return input;}
 void removeElement(forward_list<Node>& lst, const string& value, int field) {
 	if (lst.empty()){
-		cerr << "ëØ®·Æ™ Ø„·‚. ç• ¨Æ£„ ¢ÎØÆ´≠®‚Ï §†≠≠„Ó ÆØ•‡†Ê®Ó.\n";
-		cerr << "èÆ¶†´„©·‚†, ®·Ø‡†¢Ï‚• ·Æ§•‡¶®¨Æ• ‰†©´†.\n";
+		cerr << "–°–ø–∏—Å–æ–∫ –ø—É—Å—Ç. –ù–µ –º–æ–≥—É –≤—ã–ø–æ–ª–Ω–∏—Ç—å –¥–∞–Ω–Ω—É—é –æ–ø–µ—Ä–∞—Ü–∏—é.\n";
+		cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
 		return ;}
     lst.remove_if([&value, field](const Node& person) {
         istringstream iss(person.fullName);
         vector<string> fio{istream_iterator<string>{iss}, istream_iterator<string>{}};
         switch (field) {
-            case 1: // èÆ ‰†¨®´®®
+            case 1: // –ü–æ —Ñ–∞–º–∏–ª–∏–∏
                 return fio.size() > 0 && fio[0] == value;
-            case 2: // èÆ ®¨•≠®
+            case 2: // –ü–æ –∏–º–µ–Ω–∏
                 return fio.size() > 1 && fio[1] == value;
-            case 3: // èÆ Æ‚Á•·‚¢„
+            case 3: // –ü–æ –æ—Ç—á–µ—Å—Ç–≤—É
                 return fio.size() > 2 && fio[2] == value;
-            case 4: // èÆ ¢Æß‡†·‚„
+            case 4: // –ü–æ –≤–æ–∑—Ä–∞—Å—Ç—É
                 return std::to_string(person.age) == value;
-            case 5: // èÆ ·•¨•©≠Æ¨„ ØÆ´Æ¶•≠®Ó
+            case 5: // –ü–æ —Å–µ–º–µ–π–Ω–æ–º—É –ø–æ–ª–æ–∂–µ–Ω–∏—é
                 return person.maritalStatus == value;
             default:
                 return false;}});}
 void printFunctionsList() {
-    cout << "ëØ®·Æ™ §Æ·‚„Ø≠ÎÂ ™Æ¨†≠§:\n";
-    cout << "1) ì§†´®‚Ï ¢·• Ì´•¨•≠‚Î · ß†§†≠≠Î¨ ß≠†Á•≠®•¨.\n";
-    cout << "2) è•Á†‚Ï ¢·•Â Ì´•¨•≠‚Æ¢ ¢ Æ‚·Æ‡‚®‡Æ¢†≠≠Æ¨ ¢®§• (ØÆ îàé).\n";
-    cout << "3) è‡®·¢Æ®‚Ï ¢·•¨ Ì´•¨•≠‚†¨ Ø‡•§„·‚†≠Æ¢´•≠≠Î• ß≠†Á•≠®Ô.\n";
-    cout << "4) á†ØÆ´≠®‚Ï §†≠≠Î¨®.\n";
-	cout << "5) ÇÎÂÆ§.\n";
-	cout << "Ç¢•§®‚• ≠Æ¨•‡ ™Æ¨†≠§Î: ";}
+    cout << "–°–ø–∏—Å–æ–∫ –¥–æ—Å—Ç—É–ø–Ω—ã—Ö –∫–æ–º–∞–Ω–¥:\n";
+    cout << "1) –£–¥–∞–ª–∏—Ç—å –≤—Å–µ —ç–ª–µ–º–µ–Ω—Ç—ã —Å –∑–∞–¥–∞–Ω–Ω—ã–º –∑–Ω–∞—á–µ–Ω–∏–µ–º.\n";
+    cout << "2) –ü–µ—á–∞—Ç—å –≤—Å–µ—Ö —ç–ª–µ–º–µ–Ω—Ç–æ–≤ –≤ –æ—Ç—Å–æ—Ä—Ç–∏—Ä–æ–≤–∞–Ω–Ω–æ–º –≤–∏–¥–µ (–ø–æ –§–ò–û).\n";
+    cout << "3) –ü—Ä–∏—Å–≤–æ–∏—Ç—å –≤—Å–µ–º —ç–ª–µ–º–µ–Ω—Ç–∞–º –ø—Ä–µ–¥—É—Å—Ç–∞–Ω–æ–≤–ª–µ–Ω–Ω—ã–µ –∑–Ω–∞—á–µ–Ω–∏—è.\n";
+    cout << "4) –ó–∞–ø–æ–ª–Ω–∏—Ç—å –¥–∞–Ω–Ω—ã–º–∏.\n";
+	cout << "5) –í—ã—Ö–æ–¥.\n";
+	cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–æ–º–µ—Ä –∫–æ–º–∞–Ω–¥—ã: ";}
 void selectFieldForDeleting() {
-    cout << "èÆ´• ¢Î°Æ‡™®:\n";
-    cout << "1) ØÆ ‰†¨®´®®.\n2) ØÆ ®¨•≠®.\n";
-    cout << "3) ØÆ Æ‚Á•·‚¢„.\n4) ØÆ ¢Æß‡†·‚„.\n";
-    cout << "5) ØÆ ·•¨•©≠Æ¨„ ØÆ´Æ¶•≠®Ó.\n";
-	cout << "Ç¢•§®‚• ≠Æ¨•‡ ™Æ¨†≠§Î: ";}
+    cout << "–ü–æ–ª–µ –≤—ã–±–æ—Ä–∫–∏:\n";
+    cout << "1) –ø–æ —Ñ–∞–º–∏–ª–∏–∏.\n2) –ø–æ –∏–º–µ–Ω–∏.\n";
+    cout << "3) –ø–æ –æ—Ç—á–µ—Å—Ç–≤—É.\n4) –ø–æ –≤–æ–∑—Ä–∞—Å—Ç—É.\n";
+    cout << "5) –ø–æ —Å–µ–º–µ–π–Ω–æ–º—É –ø–æ–ª–æ–∂–µ–Ω–∏—é.\n";
+	cout << "–í–≤–µ–¥–∏—Ç–µ –Ω–æ–º–µ—Ä –∫–æ–º–∞–Ω–¥—ã: ";}
 bool Node::operator<(const Node& other) const {
 	return fullName < other.fullName;}
 void printSortedList(forward_list<Node>& list) {
     if (list.empty()){
-		cerr << "ëØ®·Æ™ Ø„·‚. ç• ¨Æ£„ ¢ÎØÆ´≠®‚Ï §†≠≠„Ó ÆØ•‡†Ê®Ó.\n";
-		cerr << "èÆ¶†´„©·‚†, ®·Ø‡†¢Ï‚• ·Æ§•‡¶®¨Æ• ‰†©´†.\n";
+		cerr << "–°–ø–∏—Å–æ–∫ –ø—É—Å—Ç. –ù–µ –º–æ–≥—É –≤—ã–ø–æ–ª–Ω–∏—Ç—å –¥–∞–Ω–Ω—É—é –æ–ø–µ—Ä–∞—Ü–∏—é.\n";
+		cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
 		return ;}
 	vector<Node> sorted_list(list.begin(), list.end());
 	sort(sorted_list.begin(), sorted_list.end());
-    cout << left << setw(40) << "îàé" << setw(10) << "ÇÆß‡†·‚" << setw(20) << " ë•¨•©≠Æ• ØÆ´Æ¶•≠®•" << endl;
+    cout << left << setw(40) << "–§–ò–û" << setw(10) << "–í–æ–∑—Ä–∞—Å—Ç" << setw(20) << " –°–µ–º–µ–π–Ω–æ–µ –ø–æ–ª–æ–∂–µ–Ω–∏–µ" << endl;
     cout << "--------------------------------------------------------------------------------\n";
     for (const auto& person : sorted_list) {
     cout << left << setw(40) << person.fullName << setw(10) << person.age << setw(20) << person.maritalStatus << endl;
@@ -115,8 +120,8 @@ void printSortedList(forward_list<Node>& list) {
 	cout << endl;}
 void setDefaultValues(forward_list<Node>& list, const string& fullName, int age, const string& maritalStatus) {
 	if (list.empty()){
-		cerr << "ëØ®·Æ™ Ø„·‚. ç• ¨Æ£„ ¢ÎØÆ´≠®‚Ï §†≠≠„Ó ÆØ•‡†Ê®Ó.\n";
-		cerr << "èÆ¶†´„©·‚†, ®·Ø‡†¢Ï‚• ·Æ§•‡¶®¨Æ• ‰†©´†.\n";
+		cerr << "–°–ø–∏—Å–æ–∫ –ø—É—Å—Ç. –ù–µ –º–æ–≥—É –≤—ã–ø–æ–ª–Ω–∏—Ç—å –¥–∞–Ω–Ω—É—é –æ–ø–µ—Ä–∞—Ü–∏—é.\n";
+		cerr << "–ü–æ–∂–∞–ª—É–π—Å—Ç–∞, –∏—Å–ø—Ä–∞–≤—å—Ç–µ —Å–æ–¥–µ—Ä–∂–∏–º–æ–µ —Ñ–∞–π–ª–∞.\n";
 		return ;}
 	for(auto& person : list) {
 		person.fullName = fullName;
@@ -124,12 +129,12 @@ void setDefaultValues(forward_list<Node>& list, const string& fullName, int age,
 		person.maritalStatus = maritalStatus;}}
 void setList(forward_list<Node>& list, const string& filename) {
 	clearList(list);
-	addElement(list, "à¢†≠Æ¢ ë¢Ô‚Æ·´†¢ à£Æ‡•¢®Á", 25, "ç• ¶•≠†‚");
-	addElement(list, "àË£„´Æ¢ ê†‚¨®‡ ê„·´†≠Æ¢®Á", 18, "ç• ¶•≠†‚");
-	addElement(list, "å†´ÎË•¢ Ç´†§®¨®‡ à£Æ‡•¢®Á", 19, "ç• ¶•≠†‚");
-	addElement(list, "á†¨®´Æ¢† Äß†´®Ô ê®≠†‚Æ¢≠†", 19, "ç• ß†¨„¶•¨");
-	addElement(list, "ç†„¨Æ¢ Ñ•≠®· é´•£Æ¢®Á", 31, "Ü•≠†‚");
-	addElement(list, "å„Â‚†‡Æ¢ Ä§•´Ï ê†¨®´•¢®Á", 24, "ç• ¶•≠†‚");
-	addElement(list, "ë†¨Æ©´Æ¢† Ä≠†·‚†·®Ô ÅÆ‡®·Æ¢≠†", 24, "á†¨„¶•¨");
-	addElement(list, "ä†‡®¨Æ¢ Äß†¨†‚ í®¨„‡Æ¢®Á", 43, "ç• ¶•≠†‚");
+	addElement(list, "–ò–≤–∞–Ω–æ–≤ –°–≤—è—Ç–æ—Å–ª–∞–≤ –ò–≥–æ—Ä–µ–≤–∏—á", 25, "–ù–µ –∂–µ–Ω–∞—Ç");
+	addElement(list, "–ò—à–≥—É–ª–æ–≤ –†–∞—Ç–º–∏—Ä –†—É—Å–ª–∞–Ω–æ–≤–∏—á", 18, "–ù–µ –∂–µ–Ω–∞—Ç");
+	addElement(list, "–ú–∞–ª—ã—à–µ–≤ –í–ª–∞–¥–∏–º–∏—Ä –ò–≥–æ—Ä–µ–≤–∏—á", 19, "–ù–µ –∂–µ–Ω–∞—Ç");
+	addElement(list, "–ó–∞–º–∏–ª–æ–≤–∞ –ê–∑–∞–ª–∏—è –†–∏–Ω–∞—Ç–æ–≤–Ω–∞", 19, "–ù–µ –∑–∞–º—É–∂–µ–º");
+	addElement(list, "–ù–∞—É–º–æ–≤ –î–µ–Ω–∏—Å –û–ª–µ–≥–æ–≤–∏—á", 31, "–ñ–µ–Ω–∞—Ç");
+	addElement(list, "–ú—É—Ö—Ç–∞—Ä–æ–≤ –ê–¥–µ–ª—å –†–∞–º–∏–ª–µ–≤–∏—á", 24, "–ù–µ –∂–µ–Ω–∞—Ç");
+	addElement(list, "–°–∞–º–æ–π–ª–æ–≤–∞ –ê–Ω–∞—Å—Ç–∞—Å–∏—è –ë–æ—Ä–∏—Å–æ–≤–Ω–∞", 24, "–ó–∞–º—É–∂–µ–º");
+	addElement(list, "–ö–∞—Ä–∏–º–æ–≤ –ê–∑–∞–º–∞—Ç –¢–∏–º—É—Ä–æ–≤–∏—á", 43, "–ù–µ –∂–µ–Ω–∞—Ç");
 	saveListToFile(list, filename);}
